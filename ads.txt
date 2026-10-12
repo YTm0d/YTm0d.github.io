@@ -1,0 +1,2 @@
+# ads.txt for YTm0d - Unauthorized ad sellers disallowed
+# Disallow all direct sellers and resellers
