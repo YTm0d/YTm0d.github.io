@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YTmod Download - Play Store Style</title>
     <!-- Classic Bootstrap 3.3.4 & jQuery UI Stylesheets -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
@@ -9,18 +10,19 @@
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700" rel="stylesheet" type="text/css">
     <style>
-        body { background-color: #f5f5f5; font-family: "Open Sans", sans-serif; color: #333333; }
-        .custom-widget-container { background: #ffffff; margin: 30px auto; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); max-width: 850px; }
-        .app-header { display: flex; align-items: center; border-bottom: 1px solid #eeeeee; padding-bottom: 20px; margin-bottom: 20px; text-align: left; }
-        .app-icon { width: 90px; height: 90px; border-radius: 20px; object-fit: cover; margin-right: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
-        .app-title h1 { margin: 0 0 5px 0; font-size: 28px; font-weight: 700; }
+        body { background-color: #f5f5f5; font-family: "Open Sans", sans-serif; color: #333333; margin: 0; padding: 15px; box-sizing: border-box; }
+        .custom-widget-container { background: #ffffff; margin: 20px auto; padding: 25px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); max-width: 850px; width: 100%; box-sizing: border-box; }
+        .app-header { display: flex; align-items: center; border-bottom: 1px solid #eeeeee; padding-bottom: 20px; margin-bottom: 20px; text-align: left; flex-wrap: wrap; }
+        .app-icon { width: 85px; height: 85px; border-radius: 20px; object-fit: cover; margin-right: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); flex-shrink: 0; }
+        .app-title { flex: 1; min-width: 200px; }
+        .app-title h1 { margin: 0 0 5px 0; font-size: 26px; font-weight: 700; word-break: break-word; }
         .app-title .developer { color: #00897b; font-weight: 600; font-size: 15px; }
         .app-title .ads { color: #757575; font-size: 13px; }
-        .specs-row { display: flex; justify-content: space-around; background: #fafafa; padding: 15px; border-radius: 6px; margin-bottom: 25px; text-align: center; border: 1px solid #eeeeee; flex-wrap: wrap; }
-        .spec-box { flex: 1; min-width: 120px; margin: 5px; }
+        .specs-row { display: flex; justify-content: space-around; background: #fafafa; padding: 15px; border-radius: 6px; margin-bottom: 25px; text-align: center; border: 1px solid #eeeeee; flex-wrap: wrap; gap: 10px; }
+        .spec-box { flex: 1; min-width: 110px; }
         .spec-label { color: #777777; font-size: 12px; text-transform: uppercase; font-weight: bold; }
-        .spec-value { color: #222222; font-size: 15px; font-weight: bold; margin-top: 3px; }
-        .btn-xl { padding: 14px 28px; font-size: 18px; border-radius: 6px; font-weight: 700; width: 100%; margin-bottom: 10px; }
+        .spec-value { color: #222222; font-size: 14px; font-weight: bold; margin-top: 3px; word-break: break-word; }
+        .btn-xl { padding: 14px 20px; font-size: 17px; border-radius: 6px; font-weight: 700; width: 100%; margin-bottom: 10px; white-space: normal; word-break: break-word; }
         .server-section { background: #f9f9f9; border: 1px solid #e0e0e0; padding: 20px; border-radius: 6px; margin-bottom: 20px; text-align: left; }
         
         /* Template Progress Overlay Styles */
@@ -31,17 +33,18 @@
             background: #ffffff;
             border: 1px solid #cccccc;
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            padding: 20px;
+            padding: 15px;
             border-radius: 6px;
             text-align: center;
             display: none;
+            box-sizing: border-box;
         }
-        .progress_msg { font-size: 15px; font-weight: bold; margin-bottom: 12px; color: #333333; }
-        .progress_bar { height: 20px; margin-bottom: 10px; }
-        .progress_file { display: flex; justify-content: space-between; font-size: 13px; color: #666666; }
+        .progress_msg { font-size: 14px; font-weight: bold; margin-bottom: 10px; color: #333333; }
+        .progress_bar { height: 18px; margin-bottom: 8px; width: 100%; }
+        .progress_file { display: flex; justify-content: space-between; font-size: 12px; color: #666666; flex-wrap: wrap; }
 
-        .info-section { margin-top: 30px; background: #fffde7; border: 1px solid #ffe082; padding: 20px; border-radius: 6px; text-align: left; }
-        .links-footer { margin-top: 30px; font-size: 13px; color: #555555; border-top: 1px solid #eeeeee; padding-top: 20px; text-align: left; }
+        .info-section { margin-top: 30px; background: #fffde7; border: 1px solid #ffe082; padding: 20px; border-radius: 6px; text-align: left; word-break: break-word; }
+        .links-footer { margin-top: 30px; font-size: 13px; color: #555555; border-top: 1px solid #eeeeee; padding-top: 20px; text-align: left; word-break: break-word; }
         .links-footer ul { padding-left: 20px; }
         
         /* Accordion Header styling */
@@ -60,6 +63,16 @@
         }
         .smartlink-toggle:hover {
             background: #e8eaed;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 576px) {
+            body { padding: 5px; }
+            .custom-widget-container { padding: 15px; margin: 10px auto; }
+            .app-header { flex-direction: column; text-align: center; }
+            .app-icon { margin-right: 0; margin-bottom: 12px; }
+            .specs-row { flex-direction: column; }
+            .spec-box { width: 100%; margin-bottom: 5px; }
         }
     </style>
 </head>
