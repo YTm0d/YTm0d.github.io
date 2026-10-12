@@ -33,6 +33,12 @@
             border-top: 1px solid #333;
             padding-top: 20px;
         }
+        #comments {
+            margin-top: 40px;
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 8px;
+        }
     </style>
 </head>
 <body>
@@ -50,6 +56,29 @@
 
     <h2>3. Changes to This Policy</h2>
     <p>We may update our Privacy Policy from time to time. Any changes will be posted directly on this page.</p>
+
+    <!-- Blogger Comment Container -->
+    <div id="comments">
+      <div id="comment-holder"></div>
+      <iframe 
+        name="comment-editor" 
+        id="comment-editor" 
+        src="https://www.blogger.com/comment-iframe.g?blogID=5937827454548518836&amp;postID=6114647923868034290" 
+        width="100%" 
+        height="320" 
+        frameborder="0" 
+        scrolling="no">
+      </iframe>
+    </div>
+
+    <!-- Essential Blogger RPC Relay Script -->
+    <script type="text/javascript" src="https://www.blogger.com/static/v1/js/3138370619-comment_internal.js"></script>
+    <script type="text/javascript">
+      // Load Blogger's internal RPC relay to prevent 400 Bad Request
+      if (typeof BLOG_CMT_createIframe === 'function') {
+        BLOG_CMT_createIframe('https://www.blogger.com/rpc_relay.html');
+      }
+    </script>
 
     <div class="footer">
         <p>Related: <a href="terms.html">Terms of Service</a> | <a href="index.html">Back to Home</a></p>
