@@ -43,6 +43,24 @@
         .info-section { margin-top: 30px; background: #fffde7; border: 1px solid #ffe082; padding: 20px; border-radius: 6px; text-align: left; }
         .links-footer { margin-top: 30px; font-size: 13px; color: #555555; border-top: 1px solid #eeeeee; padding-top: 20px; text-align: left; }
         .links-footer ul { padding-left: 20px; }
+        
+        /* Accordion Header styling */
+        .smartlink-toggle {
+            cursor: pointer;
+            background: #f1f3f4;
+            border: 1px solid #dcdcdc;
+            padding: 15px;
+            border-radius: 6px;
+            font-weight: bold;
+            color: #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .smartlink-toggle:hover {
+            background: #e8eaed;
+        }
     </style>
 </head>
 <body>
@@ -83,7 +101,7 @@
             </div>
         </div>
 
-        <!-- Server 1: MediaFire -->
+        <!-- Server 1: MediaFire (Primary) -->
         <div class="server-section">
             <h4>Server 1: Official MediaFire</h4>
             <p class="text-muted">Primary APK download package. <em>Note: MediaFire might be older than <a href="https://github.com/YTm0d/YTmod-App/releases" target="_blank">://github.com/YTm0d/YTmod-App/releases</a></em></p>
@@ -100,53 +118,61 @@
             </div>
         </div>
 
-        <!-- Server 2: Uplcm / Mirror -->
-        <div class="server-section">
-            <h4>Server 2: Uplcm Mirror</h4>
-            <p class="text-muted">Alternative download redirect server.</p>
-            <button class="btn btn-success btn-xl" onclick="triggerProgressAction('progress2', 'YTmod.apk', 'https://uplcm.com/4/11683517')">Download via Uplcm</button>
-            <div id="progress2" class="overlay_alert">
-                <div class="progress_msg">Status: Ready</div>
-                <div id="progress_bar_2" class="progress_bar ui-progressbar ui-widget ui-widget-content ui-corner-all" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-                    <div id="progress_bar_fill_2" class="ui-progressbar-value ui-widget-header ui-corner-left" style="width: 0%;"></div>
-                </div>
-                <div class="progress_file">
-                    <span class="progress_file_span">YTmod.apk</span>
-                    <span class="progress_size"><span class="progress_file_size">0 MB</span> / <span class="progress_file_total">75 MB</span></span>
-                </div>
-            </div>
+        <!-- Collapsible Section for External Smartlinks & Direct Links (Servers 2, 3, 4) -->
+        <div class="smartlink-toggle" data-toggle="collapse" data-target="#smartlinksCollapse" aria-expanded="false" aria-controls="smartlinksCollapse">
+            <span>Show External Smartlinks &amp; Direct Mirrors (Servers 2, 3, &amp; 4)</span>
+            <span class="glyphicon glyphicon-chevron-down"></span>
         </div>
 
-        <!-- Server 3: Fantastindents Mirror -->
-        <div class="server-section">
-            <h4>Server 3: Fast Mirror (Fantastindents)</h4>
-            <p class="text-muted">Secure external mirror server.</p>
-            <button class="btn btn-success btn-xl" onclick="triggerProgressAction('progress3', 'YTmod.apk', 'https://do.fantastindents.com/i3S0WZ3T3r6/131046')">Download via Mirror</button>
-            <div id="progress3" class="overlay_alert">
-                <div class="progress_msg">Status: Ready</div>
-                <div id="progress_bar_3" class="progress_bar ui-progressbar ui-widget ui-widget-content ui-corner-all" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-                    <div id="progress_bar_fill_3" class="ui-progressbar-value ui-widget-header ui-corner-left" style="width: 0%;"></div>
-                </div>
-                <div class="progress_file">
-                    <span class="progress_file_span">YTmod.apk</span>
-                    <span class="progress_size"><span class="progress_file_size">0 MB</span> / <span class="progress_file_total">75 MB</span></span>
+        <div id="smartlinksCollapse" class="collapse">
+            <!-- Server 2: Uplcm / Mirror -->
+            <div class="server-section">
+                <h4>Server 2: Uplcm Mirror</h4>
+                <p class="text-muted">Alternative download redirect server.</p>
+                <button class="btn btn-success btn-xl" onclick="triggerProgressAction('progress2', 'YTmod.apk', 'https://uplcm.com/4/11683517')">Download via Uplcm</button>
+                <div id="progress2" class="overlay_alert">
+                    <div class="progress_msg">Status: Ready</div>
+                    <div id="progress_bar_2" class="progress_bar ui-progressbar ui-widget ui-widget-content ui-corner-all" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                        <div id="progress_bar_fill_2" class="ui-progressbar-value ui-widget-header ui-corner-left" style="width: 0%;"></div>
+                    </div>
+                    <div class="progress_file">
+                        <span class="progress_file_span">YTmod.apk</span>
+                        <span class="progress_size"><span class="progress_file_size">0 MB</span> / <span class="progress_file_total">75 MB</span></span>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Server 4: Appointedbewitchbrakes Mirror -->
-        <div class="server-section">
-            <h4>Server 4: Alternative Direct Link</h4>
-            <p class="text-muted">Additional download key mirror.</p>
-            <button class="btn btn-success btn-xl" onclick="triggerProgressAction('progress4', 'YTmod.apk', 'https://appointedbewitchbrakes.com/ujvbniai6g?key=53edaa71d504f3fe8f2db7aff158525b')">Download via Alternate Mirror</button>
-            <div id="progress4" class="overlay_alert">
-                <div class="progress_msg">Status: Ready</div>
-                <div id="progress_bar_4" class="progress_bar ui-progressbar ui-widget ui-widget-content ui-corner-all" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-                    <div id="progress_bar_fill_4" class="ui-progressbar-value ui-widget-header ui-corner-left" style="width: 0%;"></div>
+            <!-- Server 3: Fantastindents Mirror -->
+            <div class="server-section">
+                <h4>Server 3: Fast Mirror (Fantastindents)</h4>
+                <p class="text-muted">Secure external mirror server.</p>
+                <button class="btn btn-success btn-xl" onclick="triggerProgressAction('progress3', 'YTmod.apk', 'https://do.fantastindents.com/i3S0WZ3T3r6/131046')">Download via Mirror</button>
+                <div id="progress3" class="overlay_alert">
+                    <div class="progress_msg">Status: Ready</div>
+                    <div id="progress_bar_3" class="progress_bar ui-progressbar ui-widget ui-widget-content ui-corner-all" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                        <div id="progress_bar_fill_3" class="ui-progressbar-value ui-widget-header ui-corner-left" style="width: 0%;"></div>
+                    </div>
+                    <div class="progress_file">
+                        <span class="progress_file_span">YTmod.apk</span>
+                        <span class="progress_size"><span class="progress_file_size">0 MB</span> / <span class="progress_file_total">75 MB</span></span>
+                    </div>
                 </div>
-                <div class="progress_file">
-                    <span class="progress_file_span">YTmod.apk</span>
-                    <span class="progress_size"><span class="progress_file_size">0 MB</span> / <span class="progress_file_total">75 MB</span></span>
+            </div>
+
+            <!-- Server 4: Appointedbewitchbrakes Mirror -->
+            <div class="server-section">
+                <h4>Server 4: Alternative Direct Link</h4>
+                <p class="text-muted">Additional download key mirror.</p>
+                <button class="btn btn-success btn-xl" onclick="triggerProgressAction('progress4', 'YTmod.apk', 'https://appointedbewitchbrakes.com/ujvbniai6g?key=53edaa71d504f3fe8f2db7aff158525b')">Download via Alternate Mirror</button>
+                <div id="progress4" class="overlay_alert">
+                    <div class="progress_msg">Status: Ready</div>
+                    <div id="progress_bar_4" class="progress_bar ui-progressbar ui-widget ui-widget-content ui-corner-all" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                        <div id="progress_bar_fill_4" class="ui-progressbar-value ui-widget-header ui-corner-left" style="width: 0%;"></div>
+                    </div>
+                    <div class="progress_file">
+                        <span class="progress_file_span">YTmod.apk</span>
+                        <span class="progress_size"><span class="progress_file_size">0 MB</span> / <span class="progress_file_total">75 MB</span></span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -200,6 +226,16 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script>
+        // Rotate arrow icon on collapse toggle
+        $(document).ready(function() {
+            $('#smartlinksCollapse').on('show.bs.collapse', function () {
+                $('.smartlink-toggle .glyphicon').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+            });
+            $('#smartlinksCollapse').on('hide.bs.collapse', function () {
+                $('.smartlink-toggle .glyphicon').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
+            });
+        });
+
         function triggerProgressAction(progressId, fileName, targetUrl) {
             var $container = $('#' + progressId);
             $container.show();
