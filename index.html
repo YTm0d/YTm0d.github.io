@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>YTmod Download - Play Store Style</title>
+    <!-- Classic Bootstrap 3.3.4 & jQuery UI Stylesheets -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700" rel="stylesheet" type="text/css">
+    <style>
+        body { background-color: #f5f5f5; font-family: "Open Sans", sans-serif; color: #333333; }
+        .custom-widget-container { background: #ffffff; margin: 30px auto; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); max-width: 850px; }
+        .app-header { display: flex; align-items: center; border-bottom: 1px solid #eeeeee; padding-bottom: 20px; margin-bottom: 20px; text-align: left; }
+        .app-icon { width: 90px; height: 90px; border-radius: 20px; object-fit: cover; margin-right: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        .app-title h1 { margin: 0 0 5px 0; font-size: 28px; font-weight: 700; }
+        .app-title .developer { color: #00897b; font-weight: 600; font-size: 15px; }
+        .app-title .ads { color: #757575; font-size: 13px; }
+        .specs-row { display: flex; justify-content: space-around; background: #fafafa; padding: 15px; border-radius: 6px; margin-bottom: 25px; text-align: center; border: 1px solid #eeeeee; flex-wrap: wrap; }
+        .spec-box { flex: 1; min-width: 120px; margin: 5px; }
+        .spec-label { color: #777777; font-size: 12px; text-transform: uppercase; font-weight: bold; }
+        .spec-value { color: #222222; font-size: 15px; font-weight: bold; margin-top: 3px; }
+        .btn-xl { padding: 14px 28px; font-size: 18px; border-radius: 6px; font-weight: 700; width: 100%; margin-bottom: 10px; }
+        .server-section { background: #f9f9f9; border: 1px solid #e0e0e0; padding: 20px; border-radius: 6px; margin-bottom: 20px; text-align: left; }
+        
+        /* Template Progress Overlay Styles */
+        .overlay_alert {
+            position: relative;
+            max-width: 100%;
+            margin: 15px auto;
+            background: #ffffff;
+            border: 1px solid #cccccc;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            padding: 20px;
+            border-radius: 6px;
+            text-align: center;
+            display: none;
+        }
+        .progress_msg { font-size: 15px; font-weight: bold; margin-bottom: 12px; color: #333333; }
+        .progress_bar { height: 20px; margin-bottom: 10px; }
+        .progress_file { display: flex; justify-content: space-between; font-size: 13px; color: #666666; }
+
+        .info-section { margin-top: 30px; background: #fffde7; border: 1px solid #ffe082; padding: 20px; border-radius: 6px; text-align: left; }
+        .links-footer { margin-top: 30px; font-size: 13px; color: #555555; border-top: 1px solid #eeeeee; padding-top: 20px; text-align: left; }
+        .links-footer ul { padding-left: 20px; }
+    </style>
+</head>
+<body>
+    <div class="custom-widget-container">
+        <!-- Play Store / YouTube Pro Header -->
+        <div class="app-header">
+            <img src="https://www.image2url.com/r2/default/images/1791801159184-7ec81f9e-3f05-40e6-bc0d-0bb410c04dc1.png" 
+                 onerror="this.onerror=null; this.src='https://picturetolink.com/i/iNaHcYokte.png';" 
+                 alt="YTmod Icon" class="app-icon">
+            <div class="app-title">
+                <h1>YTmod Download</h1>
+                <div class="developer">Morphe &amp; Community Patched</div>
+                <div class="ads">Ad-Free Experience &amp; MicroG Support</div>
+            </div>
+        </div>
+
+        <!-- Specifications Row -->
+        <div class="specs-row">
+            <div class="spec-box">
+                <div class="spec-label">Servers</div>
+                <div class="spec-value">MediaFire &amp; Mirrors</div>
+            </div>
+            <div class="spec-box">
+                <div class="spec-label">Android OS</div>
+                <div class="spec-value">5.0+ (API 28+)</div>
+            </div>
+            <div class="spec-box">
+                <div class="spec-label">Size</div>
+                <div class="spec-value">75 MB</div>
+            </div>
+            <div class="spec-box">
+                <div class="spec-label">Version</div>
+                <div class="spec-value">21.20.405</div>
+            </div>
+            <div class="spec-box">
+                <div class="spec-label">Package</div>
+                <div class="spec-value">com.ytmod.gold.youtube</div>
+            </div>
+        </div>
+
+        <!-- Server 1: MediaFire -->
+        <div class="server-section">
+            <h4>Server 1: Official MediaFire</h4>
+            <p class="text-muted">Primary high-speed APK download package.</p>
+            <button class="btn btn-success btn-xl" onclick="triggerProgressAction('progress1', 'YTmod.apk', 'https://www.mediafire.com/file/8zcqhzimxomw1rg/YTmod.apk/file')">Download via MediaFire</button>
+            <div id="progress1" class="overlay_alert">
+                <div class="progress_msg">Status: Ready</div>
+                <div id="progress_bar_1" class="progress_bar ui-progressbar ui-widget ui-widget-content ui-corner-all" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                    <div id="progress_bar_fill_1" class="ui-progressbar-value ui-widget-header ui-corner-left" style="width: 0%;"></div>
+                </div>
+                <div class="progress_file">
+                    <span class="progress_file_span">YTmod.apk</span>
+                    <span class="progress_size"><span class="progress_file_size">0 MB</span> / <span class="progress_file_total">75 MB</span></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Server 2: Uplcm / Mirror -->
+        <div class="server-section">
+            <h4>Server 2: Uplcm Mirror</h4>
+            <p class="text-muted">Alternative download redirect server.</p>
+            <button class="btn btn-success btn-xl" onclick="triggerProgressAction('progress2', 'YTmod.apk', 'https://uplcm.com/4/11683517')">Download via Uplcm</button>
+            <div id="progress2" class="overlay_alert">
+                <div class="progress_msg">Status: Ready</div>
+                <div id="progress_bar_2" class="progress_bar ui-progressbar ui-widget ui-widget-content ui-corner-all" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                    <div id="progress_bar_fill_2" class="ui-progressbar-value ui-widget-header ui-corner-left" style="width: 0%;"></div>
+                </div>
+                <div class="progress_file">
+                    <span class="progress_file_span">YTmod.apk</span>
+                    <span class="progress_size"><span class="progress_file_size">0 MB</span> / <span class="progress_file_total">75 MB</span></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Server 3: Fantastindents Mirror -->
+        <div class="server-section">
+            <h4>Server 3: Fast Mirror (Fantastindents)</h4>
+            <p class="text-muted">Secure external mirror server.</p>
+            <button class="btn btn-success btn-xl" onclick="triggerProgressAction('progress3', 'YTmod.apk', 'https://do.fantastindents.com/i3S0WZ3T3r6/131046')">Download via Mirror</button>
+            <div id="progress3" class="overlay_alert">
+                <div class="progress_msg">Status: Ready</div>
+                <div id="progress_bar_3" class="progress_bar ui-progressbar ui-widget ui-widget-content ui-corner-all" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                    <div id="progress_bar_fill_3" class="ui-progressbar-value ui-widget-header ui-corner-left" style="width: 0%;"></div>
+                </div>
+                <div class="progress_file">
+                    <span class="progress_file_span">YTmod.apk</span>
+                    <span class="progress_size"><span class="progress_file_size">0 MB</span> / <span class="progress_file_total">75 MB</span></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Server 4: Appointedbewitchbrakes Mirror -->
+        <div class="server-section">
+            <h4>Server 4: Alternative Direct Link</h4>
+            <p class="text-muted">Additional download key mirror.</p>
+            <button class="btn btn-success btn-xl" onclick="triggerProgressAction('progress4', 'YTmod.apk', 'https://appointedbewitchbrakes.com/ujvbniai6g?key=53edaa71d504f3fe8f2db7aff158525b')">Download via Alternate Mirror</button>
+            <div id="progress4" class="overlay_alert">
+                <div class="progress_msg">Status: Ready</div>
+                <div id="progress_bar_4" class="progress_bar ui-progressbar ui-widget ui-widget-content ui-corner-all" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                    <div id="progress_bar_fill_4" class="ui-progressbar-value ui-widget-header ui-corner-left" style="width: 0%;"></div>
+                </div>
+                <div class="progress_file">
+                    <span class="progress_file_span">YTmod.apk</span>
+                    <span class="progress_size"><span class="progress_file_size">0 MB</span> / <span class="progress_file_total">75 MB</span></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- MicroG Requirement Notice & Links -->
+        <div class="info-section">
+            <h4>⚠️ MicroG Requirement &amp; Instructions</h4>
+            <p>Because this app uses package name <code>com.ytmod.gold.youtube</code>, you <strong>must install MicroG</strong> for Google account sign-in:</p>
+            <ul>
+                <li>MicroG-RE Releases: <a href="https://github.com/MorpheApp/MicroG-RE/releases" target="_blank">://github.com/MorpheApp/MicroG-RE/releases</a></li>
+                <li>GmsCore Releases: <a href="https://github.com/microg/GmsCore/releases" target="_blank">://github.com/microg/GmsCore/releases</a></li>
+                <li>Official MicroG Website: <a href="https://microg.org/" target="_blank">://microg.org</a></li>
+            </ul>
+        </div>
+
+        <!-- Footer Links & References -->
+        <div class="links-footer">
+            <p><strong>Contact Us:</strong> You can contact on <a href="mailto:YTmod@proton.me">YTmod@proton.me</a></p>
+            <p style="margin-top: 10px;"><strong>Our GitHub Repositories:</strong></p>
+            <ul>
+                <li>Our GitHub Organization: <a href="https://github.com/YTm0d" target="_blank">://github.com/YTm0d</a></li>
+                <li>Our Site Repo: <a href="https://github.com/YTm0d/YTm0d.github.io" target="_blank">://github.com/YTm0d/YTm0d.github.io</a></li>
+                <li>Our App Repo: <a href="https://github.com/YTm0d/YTmod-App" target="_blank">://github.com/YTm0d/YTmod-App</a></li>
+            </ul>
+            <p style="margin-top: 10px;"><strong>Builder &amp; Patcher Tools (Morphe):</strong></p>
+            <ul>
+                <li>Morphe Website: <a href="https://morphe.software" target="_blank">://morphe.software</a></li>
+                <li>Morphe Patches: <a href="https://morphe-patches.software" target="_blank">://morphe-patches.software</a></li>
+                <li>Morphe GitHub: <a href="https://github.com/MorpheApp" target="_blank">://github.com/MorpheApp</a></li>
+            </ul>
+            <p style="margin-top: 15px;"><strong>Inspirations &amp; References:</strong></p>
+            <p>
+                Inspired by ReVanced: <a href="https://ReVanced.app" target="_blank">://ReVanced.app</a> | <a href="https://github.com/ReVanced" target="_blank">://github.com/ReVanced</a><br>
+                Inspired by YouTube Pro: <a href="https://youtubepro.app" target="_blank">://youtubepro.app</a> | <a href="https://www.samapkstore.com/search/label/YouTube%2520Pro" target="_blank">://samapkstore.com</a> | <a href="https://apps2app.com/youtube-pro-apk/" target="_blank">://apps2app.com</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script>
+        function triggerProgressAction(progressId, fileName, targetUrl) {
+            var $container = $('#' + progressId);
+            $container.show();
+            var $msg = $container.find('.progress_msg');
+            var $fill = $container.find('[id^="progress_bar_fill_"]');
+            var $size = $container.find('.progress_file_size');
+
+            let progress = 0;
+            $msg.text("Connecting to server...");
+            
+            let interval = setInterval(function() {
+                progress += 10;
+                if (progress > 100) {
+                    clearInterval(interval);
+                    $msg.text("Complete! Redirecting...");
+                    setTimeout(function() {
+                        window.location.href = targetUrl;
+                    }, 800);
+                } else {
+                    $fill.css("width", progress + "%");
+                    $size.text((progress * 7.5).toFixed(1) + " MB");
+                    if (progress === 30) {
+                        $msg.text("Downloading " + fileName + "...");
+                    } else if (progress === 80) {
+                        $msg.text("Finalizing package...");
+                    }
+                }
+            }, 200);
+        }
+    </script>
+</body>
+</html>
